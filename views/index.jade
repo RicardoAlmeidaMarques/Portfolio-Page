@@ -3,15 +3,20 @@ block title
   title Ricardo Marques
 block content
   div.hero
-    div.container
-      nav
-        ul
-          li Home
-          li Portfolio
-          li 
-            img(src='images/logo.png', alt='')
-          li Resume
-          li Contact me
+    div.hero-gradient
+      div.container
+        nav
+          ul
+            li Home
+              div.border-bot
+            li Portfolio
+              div.border-bot
+            li 
+              img(src='images/logo.png', alt='')
+            li Resume
+              div.border-bot
+            li Contact me
+              div.border-bot
   div.container
     div.title A little about me.
     div.content 
@@ -26,7 +31,7 @@ block content
         I love building websites</b> whether they are sharp, clean and minimalist or complex and exuberant.
         Some of my hobbies are playing guitar, games (#pcmasterrace) and netflix watching sprees with the wife.
     div.divider
-    div.title-right Latest work.
+    div.title.right Latest work.
     div.content  
       ul 
        each item in results2
@@ -35,3 +40,4 @@ block content
             div.info
               span #{item.title}
                 p #{item.description}
+                a(class='button', href='/portfolio/#{item.title}') Read more
