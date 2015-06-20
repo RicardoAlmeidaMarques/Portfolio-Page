@@ -7,9 +7,67 @@ html(lang="en")
 
     block title
       title Default title
-
     link(rel='stylesheet', href='stylesheets/style.css')
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Raleway:600|Oswald:300|Open+Sans:300')
  
+    link(rel='stylesheet', href='stylesheets/hint.min.css')
+  
   body
-    block content
+    div.wrapper
+      div.hero
+        div.hero-gradient
+           nav
+            div#mobileLogo
+              a(href='/') R/M
+            div#hamburger
+              div#first
+              div#second
+              div#third
+            ul#menu
+              li 
+                a(href='/') Home
+                div.border-bot
+              li 
+                a(href='/portfolio') Portfolio
+                div.border-bot
+              li.logo 
+                div.logo 
+                   a(href='/') R<span>/M</span>
+              li 
+                a(href='/resume') Resume
+                div.border-bot
+              li 
+                a(href='/contact') Contact me
+                div.border-bot
+      block content
+      div.push
+    div.footer
+      div.container
+        div.navigation
+          ul
+            li 
+              a(href='/') Home
+              div.border-bot
+            li 
+              a(href='/portfolio') Portfolio
+              div.border-bot
+            li 
+              a(href='/resume') Resume
+              div.border-bot
+            li 
+              a(href='/contact') Contact me
+              div.border-bot
+          p  &copy;2015 Ricardo Marques. All rights reserved.
+        div.social-icons
+          a(href='http://twitter.com/ricardo2marques',target='blank',data-hint="Twitter",class="hint--top")
+            img(src='images/webicon-twitter.svg')
+          a(href='https://github.com/RicardoAlmeidaMarques',target='blank',data-hint="GitHub",class="hint--top") 
+            img(src='images/webicon-github.svg')
+          a(href='mailto:ricardoalmmarques@gmail.com',data-hint="eMail",class="hint--top") 
+            img(src='images/webicon-mail.svg')
+          p
+            span 
+              div.email 
+                a(href='mailto:ricardoalmmarques@gmail.com') ricardoalmmarques@gmail.com
+     
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')  
+  script(src='javascripts/js.js')

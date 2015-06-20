@@ -1,0 +1,34 @@
+@media only screen and (max-width : 650px) {
+
+	.content ul li .info .itemTitle{
+		margin-bottom:10px;
+		padding-bottom:10px;
+		border-bottom:1px solid #333;
+
+	}
+
+	.content ul li .info span p{
+	  display:none;
+	}
+
+	.content ul li:hover .info span{
+	  opacity:1;
+	}
+
+
+}
+
+@media only screen and (max-width : 550px) {
+
+	.content ul li{
+		width:100%;
+	}
+
+	.content ul li .info span p{
+	  display:none;
+	}
+
+	.content ul li:hover .info span{
+	  opacity:1;
+	}
+}

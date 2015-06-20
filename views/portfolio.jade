@@ -2,62 +2,55 @@ extends layout
 block title
   title R/M - Portfolio
 block content
-  div.wrapper
-    div.container
-      nav
-        ul
-          li 
-            a(href='/') Home
-            div.border-bot
-          li 
-            a(href='/portfolio') Portfolio
-            div.border-bot
-          li 
-            div.logo 
-               a(href='/') R<span>/M</span>
-          li 
-            a(href='/resume') Resume
-            div.border-bot
-          li 
-            a(href='/contact') Contact me
-            div.border-bot
-    div.content
-      ul 
+  link(rel='stylesheet', href='stylesheets/portfolio.css')
+  div.content
+    - if (typeof(results2)!=='undefined'){
+      ul
         div#portfolioContainer
           each item in results2
-             li
-               img(src='images/portfolio/#{item.image_path}')
-               div.info
-                 span #{item.title}
-                   p #{item.description}
-                   a(class='button', href='/portfolio/#{item.title}') See more
+            li
+              img(src='images/portfolio/#{item.image_path}')
+              div.info
+                span
+                  .itemTitle #{item.title}
+                  p #{item.description}
+                  a(class='button', href='/portfolio/#{item.title}') See more
+              div.curtain
+    -}
     - if (typeof(results3)!=='undefined'){
       div.projectContainer 
         div.projectTitle #{results3[0].title}
         div.projectDescription #{results3[0].long_description}
       div.projectShowcase 
+        - if (results3[0].showcase_image!==''){
         img(src='images/portfolio/#{results3[0].showcase_image}')
+        -}
     -}
-  div.footer
-    div.container
-      div.navigation
-        ul
-           li Home
-                div.border-bot
-              li Portfolio
-                div.border-bot
-              li Resume
-                div.border-bot
-              li Contact me
-                div.border-bot
-        p  &copy;2015 Ricardo Marques. All rights reserved.
+div.footer
+  div.container
+    div.navigation
+      ul
+        li 
+          a(href='/') Home
+          div.border-bot
+        li 
+          a(href='/portfolio') Portfolio
+          div.border-bot
+        li 
+          a(href='/resume') Resume
+          div.border-bot
+        li 
+          a(href='/contact') Contact me
+          div.border-bot
+      p  &copy;2015 Ricardo Marques. All rights reserved.
+    div.social-icons
       div.social-icons
-        a(href='http://twitter.com/ricardo2marques',target='blank') 
-          img(src='images/webicon-twitter.svg')
-        a(href='https://github.com/RicardoAlmeidaMarques',target='blank') 
-          img(src='images/webicon-github.svg')
-        a(href='mailto:ricardoalmmarques@gmail.com') 
-          img(src='images/webicon-mail.svg')
-      span 
-        div.email 
-          a(href='mailto:ricardoalmmarques@gmail.com') ricardoalmmarques@gmail.com
+      a(href='http://twitter.com/ricardo2marques',target='blank',data-hint="Twitter",class="hint--top")
+        img(src='images/webicon-twitter.svg')
+      a(href='https://github.com/RicardoAlmeidaMarques',target='blank',data-hint="GitHub",class="hint--top") 
+        img(src='images/webicon-github.svg')
+      a(href='mailto:ricardoalmmarques@gmail.com',data-hint="Email",class="hint--top") 
+        img(src='images/webicon-mail.svg')
+    span 
+      div.email 
+        a(href='mailto:ricardoalmmarques@gmail.com') ricardoalmmarques@gmail.com
