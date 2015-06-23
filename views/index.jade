@@ -4,8 +4,8 @@ block title
 block content
   link(rel='stylesheet', href='stylesheets/index.css')
   div.container
-    div.title A little about me.
     div.content 
+      div.title A little about me.
       p.
         Hi! My name is Ricardo Marques and I&#39;m a software engineer with a passsion for front-end / back-end development and anything web 
         related. All of this started when I was around 2 years old and would often sit and play for as long as I was 
@@ -18,14 +18,14 @@ block content
         Some of my hobbies are playing guitar, games (#pcmasterrace) and netflix watching sprees with the wife.
       div.divider
       div.title.right Latest work.
-      div.content  
-        ul 
-         each item in results2
-            li
-              img(src='images/portfolio/#{item.image_path}')
-              div.info
-                span 
-                  .itemTitle #{item.title}
-                  p #{item.description}
-                  a(class='button', href='/portfolio/#{item.title}') See more
-              div.curtain
+    div.content  
+      ul 
+       each item in results2
+          li
+            img(src='images/portfolio/#{item.image_path}')
+            div.info
+              span 
+                .itemTitle #{item.title}
+                p #{item.description}
+                a(class='button', href='/portfolio/#{item.title}') See more
+            div.curtain

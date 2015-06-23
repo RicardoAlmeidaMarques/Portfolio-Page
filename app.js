@@ -8,6 +8,7 @@ var router = express.Router();
 
 var routes = require('./routes/index');
 var portfolioRoutes = require('./routes/portfolio');
+var resumeRoutes = require('./routes/resume');
 
 var app = express();
 
@@ -24,7 +25,9 @@ app.use(cookieParser());
 app.use(express.static('./public/'));
 app.use('/', routes);
 app.use('/', portfolioRoutes);
+app.use('/', resumeRoutes);
 app.use('/portfolio', express.static(__dirname + '/public'));
+app.use('/resume', express.static(__dirname + '/public'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
