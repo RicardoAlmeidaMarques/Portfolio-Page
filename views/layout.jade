@@ -4,9 +4,11 @@ html(lang="en")
 
     meta(charset="utf-8")
     meta(name="viewport",content="width=device-width, initial-scale=1.0")  
-
+    link(rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32")
+    link(rel="icon" type="image/png" href="images//favicon-32x32.png" sizes="16x16")
     block title
       title Default title
+
   link(rel='stylesheet', href='stylesheets/style.css')
   link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:300|Raleway:600|Open+Sans:300|Playfair+Display')
   link(rel='stylesheet', href='stylesheets/hint.min.css')
@@ -35,11 +37,12 @@ html(lang="en")
               a(href='/resume') Resume
               div.border-bot
             li 
-              a(href='/contact') Contact me
+              a(href='/#contact') Contact me
               div.border-bot
         div#announcement
           h1
           p
+          span
         div#scrollDown
         div.heroImg
       block content

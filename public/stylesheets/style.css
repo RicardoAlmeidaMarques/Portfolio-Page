@@ -127,7 +127,7 @@ html,body{
   background-repeat: no-repeat;
   background-size:cover;
   height:60vmin;
-  z-index:-1;
+  z-index:-2;
   margin-top:30vmin;
   -moz-transform: translate(0%, -50%);
   -ms-transform: translate(0%, -50%);
@@ -142,7 +142,7 @@ html,body{
   max-width:80%;
   position:absolute;
   top:30vmin;
-  z-index: 2;
+  z-index: 1;
   left:50%;
   -moz-transform: translate(-50%, -30%);
   -ms-transform: translate(-50%, -30%);
@@ -166,6 +166,14 @@ html,body{
   margin-top:10px;
   letter-spacing: 5px;
 }
+
+
+#announcement span{
+  font-size:0.9em;
+  letter-spacing: 5px;
+  line-height: 60px;
+}
+
 
 
 #scrollDown{
@@ -728,7 +736,8 @@ nav>ul img{
   }
 
   nav>ul{
-    z-index:-1;
+    max-height:0px;
+    z-index:-2;
     opacity:0;
     color:#eee;
     position:absolute;
@@ -743,6 +752,7 @@ nav>ul img{
     -moz-transition:max-height 100ms ease-in-out;
     transition:max-height 100ms ease-in-out;
     overflow:hidden;
+ 
     
   }
 
@@ -759,6 +769,7 @@ nav>ul img{
   nav>ul>li a{
     display:inline-block;
     width:100%;
+
   }
 
   nav>ul>li a:hover{

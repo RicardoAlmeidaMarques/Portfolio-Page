@@ -6,7 +6,7 @@ block content
   div.content
     - if (typeof(results2)!=='undefined'){
       ul
-        div#portfolioContainer
+        div#portfolioContainer.scene_element.scene_element--fadeinright
           each item in results2
             li
               img(src='images/portfolio/#{item.image_path}')
@@ -21,7 +21,7 @@ block content
       div.projectContainer
         div.projectTitle #{results3[0].title}
         div.projectDescription #{results3[0].long_description}
-      div.projectShowcase
+      div.projectShowcase.scene_element.scene_element--fadeinright
         - if (results3[0].showcase_image!==''){
           each img in images
             img.lazy(class='popup' href='images/portfolio/#{img}' data-original='images/portfolio/#{img}')

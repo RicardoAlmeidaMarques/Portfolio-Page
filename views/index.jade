@@ -3,6 +3,14 @@ block title
   title Ricardo Marques
 block content
   link(rel='stylesheet', href='stylesheets/index.css')
+  - if (typeof(sent) !== 'undefined'){
+    - if (sent==='sent'){
+      div.alert Message sent! Thank you!
+    -}
+    - else{
+      div.alert Message not sent. Please use email link at the bottom of the page.
+    -}
+  -}
   div.container.scene_element.scene_element--fadeinright
     div.content 
       div.title A little about me.
@@ -16,9 +24,9 @@ block content
       p.
         <br>I love building websites</b> whether they are sharp, clean and minimalist or complex and exuberant.
         Some of my hobbies are playing guitar, games (#pcmasterrace) and netflix watching sprees with the wife.
-      div.divider
-      div.title.right Latest work.
+    div.divider
     div.content  
+      div.title.right Latest work.
       ul 
        each item in results2
           li
@@ -29,3 +37,12 @@ block content
                 p #{item.description}
                 a(class='button', href='/portfolio/#{item.title}') See more
             div.curtain
+  div#contact  
+   div.container.scene_element.scene_element--fadeinright
+    div.contactTitle Talk to me.
+    form(name='contactme', id='contactme', method='post')
+      fieldset
+        input(name='name',type='text',id='name', placeholder='Name',required)
+        input(name='email',type='text',id='email', placeholder='E-mail',required)
+        textarea(name='message', id='message', placeholder='Message',required)
+        input.submit(name='submit', type='submit', value='Send', id='submit')

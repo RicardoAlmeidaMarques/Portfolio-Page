@@ -5,19 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = express.Router();
-
+var nodemailer = require('nodemailer');
 var routes = require('./routes/index');
 var portfolioRoutes = require('./routes/portfolio');
 var resumeRoutes = require('./routes/resume');
-
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+
+app.get('/', routes);
+
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon-32x32.png'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,8 +28,36 @@ app.use(express.static('./public/'));
 app.use('/', routes);
 app.use('/', portfolioRoutes);
 app.use('/', resumeRoutes);
+app.use('/', express.static(__dirname + '/public'));
 app.use('/portfolio', express.static(__dirname + '/public'));
-app.use('/resume', express.static(__dirname + '/public'));
+
+
+app.post('/', function (req, res) {
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: "ricardoalmmarques@gmail.com",
+        pass: "ldcaqeuvyhylcrzu" 
+    }
+  });
+  transporter.sendMail({
+    to: 'ricardoalmmarques@gmail.com',
+    subject: 'Portfolio page contact',
+    text:req.body.message + '\n\xA0\n\xA0\n\xA0Sent by ' + req.body.email
+  },function (error, response) {
+      //Email not sent
+      if (error) {
+          res.redirect('/?message=error');
+      }
+      //Yay!! Email sent
+      else {
+          res.redirect('/?message=sent');
+      }
+    }
+  );
+});
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,6 +67,7 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
 
 // development error handler
 // will print stacktrace
@@ -59,6 +90,8 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
 
 var server = app.listen(3000, function () {
 
