@@ -1,0 +1,106 @@
+
+ul, li{
+	margin:0;
+}
+
+.heroImg{
+	background:url('../images/coffee.jpg');
+}
+
+#announcement h1:after{
+	content:'Programmer';
+}
+
+#announcement p:after{
+	content:'pro·gram·mer (n) An organism capable of converting caffeine into code.';
+	letter-spacing: 2px;
+}
+
+.title{
+	text-align:center;
+	font-size:1.2em;
+}
+
+.skillz{
+	margin:0;
+	padding:0;
+	position:relative;
+}
+
+.skillz>ul{
+	margin:0;
+	padding:0;
+	width:50%;
+}
+
+.skillz>ul.left{
+	box-sizing:border-box;
+	border-right:1px solid #CCC;
+	
+}
+
+.skillz>ul.right{
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+.skillz>ul>li{
+	font-family:'Oswald';
+	font-size:1.3em;
+	margin:0;
+	color:black;
+	width:100%;
+	text-align:center;
+	margin-top:30px;
+}
+
+.skillz>ul>li:first-child{
+	margin-top:5px;
+}
+
+
+.skillz>ul>li>ul>li{
+	font-family:'Open Sans';
+	font-size:0.8em;
+	text-align:center;
+	margin:0;
+	padding:0;
+	width:100%;
+}
+
+.skillz>ul>li>ul>li:first-child{
+	margin-top:15px;
+}
+
+
+
+.clear{
+	clear:both;
+}
+
+.download{
+	max-width:200px;
+	margin:0 auto;
+	border:3px solid #333;
+	text-align: center;
+	padding:3px 10px;
+	margin-top:50px;
+	cursor:pointer;
+}
+
+.download:hover{
+	background:#333;
+	color:#EEE;
+}
+
+
+@media only screen and (max-width : 660px) {
+
+
+	.content{
+    	margin-top:200px;
+  	}
+
+ }
+

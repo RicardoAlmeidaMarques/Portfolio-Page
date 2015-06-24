@@ -3,7 +3,7 @@ block title
   title Ricardo Marques
 block content
   link(rel='stylesheet', href='stylesheets/index.css')
-  div.container
+  div.container.scene_element.scene_element--fadeinright
     div.content 
       div.title A little about me.
       p.
@@ -22,7 +22,7 @@ block content
       ul 
        each item in results2
           li
-            img(src='images/portfolio/#{item.image_path}')
+            img.lazy(data-original='images/portfolio/#{item.image_path}')
             div.info
               span 
                 .itemTitle #{item.title}

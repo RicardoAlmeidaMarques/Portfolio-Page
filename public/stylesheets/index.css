@@ -1,4 +1,23 @@
-@media only screen and (max-width : 650px) {
+#announcement h1:after{
+	content:'Ricardo Marques';
+}
+
+#announcement p:after{
+	content:'Chicago-based web developer.';
+}
+
+
+@media only screen and (max-width : 660px) {
+
+
+	.content{
+		width:85%;
+		margin:0 auto;
+  	}
+
+  	.content:first-child{
+		margin-top:150px;
+	}
 
 	.content ul li .info .itemTitle{
 		margin-bottom:10px;
@@ -6,6 +25,11 @@
 		border-bottom:1px solid #333;
 
 	}
+
+	.content ul li .info a{
+		padding:3px 5px 4px 5px;;
+	}
+
 
 	.content ul li .info span p{
 	  display:none;
@@ -19,6 +43,11 @@
 }
 
 @media only screen and (max-width : 550px) {
+
+	.content{
+		margin:0px auto;
+	}
+
 
 	.content ul li{
 		width:100%;

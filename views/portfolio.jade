@@ -18,12 +18,13 @@ block content
               div.curtain
     -}
     - if (typeof(results3)!=='undefined'){
-      div.projectContainer 
+      div.projectContainer
         div.projectTitle #{results3[0].title}
         div.projectDescription #{results3[0].long_description}
-      div.projectShowcase 
+      div.projectShowcase
         - if (results3[0].showcase_image!==''){
-        img(src='images/portfolio/#{results3[0].showcase_image}')
+          each img in images
+            img.lazy(class='popup' href='images/portfolio/#{img}' data-original='images/portfolio/#{img}')
         -}
     -}
 div.footer

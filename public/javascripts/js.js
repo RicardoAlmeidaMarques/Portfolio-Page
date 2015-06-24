@@ -1,20 +1,28 @@
+
+
+
+$(window).load(function(){
+     $("html,body").trigger("scroll");
+});
+
+
 $( document ).ready(function() {
-	
 
-  $(window).on("mousewheel DOMMouseScroll", function(event){
+  $(function() {
+    $("img.lazy").lazyload({
+      threshold:200
+    });
+  });
 
-    event.preventDefault(); 
+  $('.popup').magnificPopup({ 
+    type: 'image',
+    gallery:{enabled:true},
+  });
 
-    var delta = event.originalEvent.wheelDelta/150 || -event.originalEvent.detail/3;
-    var scrollTop = $(window).scrollTop();
-    var finalScroll = scrollTop - parseInt(delta*180);
+  var smallMenu=0;
 
-    TweenMax.to($(window), 0.5, {
-      scrollTo : { y: finalScroll, autoKill:true },
-        ease: Power1.easeOut,
-        overwrite: 5              
-      });
-
+  $('#scrollDown').click(function(){
+    $('html, body').animate({scrollTop:($('.content:first').offset().top) - 80}, 1200);
   });
 
 
@@ -27,22 +35,28 @@ $( document ).ready(function() {
        }
 
 
-       $('.hero img').css({
-          'transform':'translate(0% , ' + (-(50) + (wScroll /10)) + '%)'
+       $('.heroImg').css({
+          'transform':'translate(0% , ' + (-(50) + (wScroll /8)) + '%)'
        });
 
+       $('#announcement').css({
+          'transform':'translate(-50% , ' + (-(30) + (wScroll /2)) + '%)',
+          'opacity':(1 - ((wScroll /5)/100)) 
+       });
+
+
       //smaller menu
-       if(getYOffset($('nav')) >  getYOffset($('.content:first'))-80){ 
-        console.log('heree');  
+       if(smallMenu==0 && ( getYOffset($('nav')) >  getYOffset($('.content:first'))-85) ){ 
           $('nav').css({'height':'50px'});  
           $('nav ul').css({'margin-top':'-13px'});
+          smallMenu=1;
        }
 
       //normal menu
-       if(getYOffset($('nav')) <=  getYOffset($('.content:first'))-80){
-        console.log('there'); 
+       if(smallMenu==1 && ( getYOffset($('nav')) <=  getYOffset($('.content:first'))-85) ){
           $('nav ul').css({'margin-top':'0px'});
-          $('nav').css('height','88px');          
+          $('nav').css('height','88px');
+          smallMenu=0;          
        }
 
 
@@ -63,8 +77,6 @@ $( document ).ready(function() {
   			$('#hamburger > :nth-child(3)').removeClass("bottomBun");
   		}
 	});
-
-
-
-
+  
 });
+
