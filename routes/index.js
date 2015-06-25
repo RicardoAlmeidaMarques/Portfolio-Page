@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : '71.194.135.11',
-  user     : 'root',
-  password : '',
+  host     : 'us-cdbr-iron-east-02.cleardb.net/heroku_f2687eb84bdfccc?reconnect=true',
+  user     : 'bb4c86f22a098a',
+  password : 'c06b6476',
   database : 'portfolio'
 });
 
