@@ -69,17 +69,17 @@ app.use(function(req, res, next) {
 // error handlers
 
 
-development error handler
-will print stacktrace
-if (app.get('env') === 'production') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500)5;
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
+// //development error handler
+// //will print stacktrace
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(function(err, req, res, next) {
+//     res.status(err.status || 500)5;
+//     res.render('error', {
+//       message: err.message,
+//       error: err
+//     });
+//   });
+// }
 
 // production error handler
 // no stacktraces leaked to user
@@ -91,6 +91,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
+
+process.on('uncaughtException', function(err) {
+  console.log('Caught exception: ' + err);
+});
 
 
 var server = app.listen(process.env.PORT || 3000, function () {
