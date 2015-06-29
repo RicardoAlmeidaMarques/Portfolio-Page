@@ -1,0 +1,59 @@
+extends layout
+block title
+  title R/M - edit #{project.title} 
+block content
+  link(rel='stylesheet', href='stylesheets/edit.css')
+  div.content
+    if !isAuthenticated
+      p.login Not Authenticated. Login 
+        a(href='/admin') here
+        | .
+    else
+      a(href='/admin' class='btn') << Go back
+      form(action='/edit/#{project.title}', name='edit', id='edit',enctype='multipart/form-data' , method='post')
+        fieldset
+          table
+            tr
+              td
+                label(for='title') Title
+              td
+                input(name='title',type='text',id='title', value='#{project.title}',required)
+            tr
+              td
+                label(for='title') Description
+              td
+                input(name='description',type='text',id='title', value='#{project.description}')
+            tr
+              td 
+                label(for='long_description') Long description
+              td
+                textarea(name='longDescription', id='longDescription') #{project.long_description}
+            tr
+              td
+                label#mainImgLabel(for='mainImage') Main Image
+              td
+                img#mainImage(src='images/portfolio/#{project.image_path}')
+            tr
+              td
+                label#newPicture(for='uploadNewImage') Upload new Picture
+              td
+                input(name='imagePath',type='file',id='imagePath')
+            tr
+              td
+                label#showCaseImages(for='mainImage') Showcase Images
+              td
+                div.showcaseimages
+                  -if(imageArray!=null){
+                  each image in imageArray
+                    img.showcaseImage(src='images/portfolio/#{image}')
+                  -}
+            tr
+              td
+                label#newPicture(for='uploadNewImage') Upload new pictures
+              td
+                input(name='upload', type='file' , id='upload' , multiple='multiple')
+            tr.submit
+              td(colspan='2')
+                input(type='submit' ,class='submit', value='submit')
+        
+  <script src="javascripts/edit.js"></script>

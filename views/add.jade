@@ -1,0 +1,45 @@
+extends layout
+block title
+  title R/M - Add project
+block content
+  link(rel='stylesheet', href='stylesheets/edit.css')
+  div.content
+    if !isAuthenticated
+      p.login Not Authenticated. Login 
+        a(href='/admin') here
+        | .
+    else
+      a(href='/admin' class='btn') << Go back
+      form(action='/add', name='add', id='edit',enctype='multipart/form-data' , method='post')
+        fieldset
+          table
+            tr
+              td
+                label(for='title') Title
+              td
+                input(name='title',type='text',id='title',required)
+            tr
+              td
+                label(for='title') Description
+              td
+                input(name='description',type='text',id='title')
+            tr
+              td 
+                label(for='long_description') Long description
+              td
+                textarea(name='longDescription', id='longDescription')
+            tr
+              td
+                label#newPicture(for='uploadNewImage') Upload new main image
+              td
+                input(name='imagePath',type='file',id='imagePath')
+            tr
+              td
+                label#newPicture(for='uploadNewImage') Upload new showcase images
+              td
+                input(name='upload', type='file' , id='upload' , multiple='multiple')
+            tr.submit
+              td(colspan='2')
+                input(type='submit' ,class='submit', value='submit')
+        
+  <script src="javascripts/edit.js"></script>

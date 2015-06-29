@@ -1,0 +1,31 @@
+extends layout
+block title
+  title R/M - Admin
+block content
+  link(rel='stylesheet', href='stylesheets/admin.css')
+  div.content
+    if !isAuthenticated
+      form(action='/admin', name='login', id='login', method='post')
+        fieldset
+          input(name='username',type='text',id='username', placeholder='Username',required)
+          input(name='password',type='password',id='password', placeholder='Password',required)
+          input.submit(name='login', type='submit', value='Login', id='login')
+    else
+      div.logout 
+        p Logged in as #{user.username} 
+          a(href='/logout') Logout
+        a(class='add', href='/add') Add portfolio case
+      div.edits
+        ul
+          each item in portfolio
+            li
+              img(src='images/portfolio/#{item.image_path}')
+              div.info
+                span
+                  .itemTitle #{item.title}
+                  p #{item.description}
+                  a(class='button', href='/edit/#{item.title}') Edit
+                  p 
+                    a(class='button', href='/remove/#{item.title}') Remove
+                    a(class='button', href='/project/#{item.title}') View
+              div.curtain

@@ -1,0 +1,15 @@
+extends layout
+block title
+  title R/M - Portfolio
+block content
+  link(rel='stylesheet', href='stylesheets/portfolio.css')
+  link(rel='stylesheet', href='stylesheets/project.css')
+  div.content
+    div.projectContainer
+      div.projectTitle #{results3[0].title}
+      div.projectDescription #{results3[0].long_description}
+    div.projectShowcase.scene_element.scene_element--fadeinright
+      - if (results3[0].showcase_image!==''){
+        each img in images
+          img(class='popup' src='images/portfolio/#{img}' href='images/portfolio/#{img}' data-original='images/portfolio/#{img}')
+      - }
