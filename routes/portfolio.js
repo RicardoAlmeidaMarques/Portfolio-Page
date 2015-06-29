@@ -41,14 +41,4 @@ router.get('/portfolio', function(req, res) {
   });
 });
 
-router.get('/portfolio/:title', function(req, res) {
-    var title=req.params.title;
-    connection.query('SELECT * from `portfolio` WHERE `title`=?',[title], function(err, results, fields) {
-      if (err) throw err;
-      var images=results[0].showcase_image;
-      var imageArray= images.split(",");
-      res.render('portfolio', {results2:[],results3:results,images:imageArray});
-    });
-});
-
 module.exports = router;

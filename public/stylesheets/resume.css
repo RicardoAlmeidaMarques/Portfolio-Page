@@ -5,6 +5,9 @@ ul, li{
 
 .heroImg{
 	background:url('../images/coffee.jpg');
+	background-position:center 70%;
+	background-repeat: no-repeat;
+ 	background-size:cover;
 }
 
 #announcement h1:after{
@@ -86,6 +89,7 @@ ul, li{
 	text-align: center;
 	padding:3px 10px;
 	margin-top:50px;
+	margin-bottom:50px;
 	cursor:pointer;
 }
 

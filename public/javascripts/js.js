@@ -1,12 +1,4 @@
 
-  if($('.projectShowcase').length){
-          $('.heroImg').addClass('hide');
-          $('#announcement').addClass('hide');;
-          $('#scrollDown').addClass('hide');;
-       }
-
-
-
 $(window).load(function(){
      $("html,body").trigger("scroll");
 

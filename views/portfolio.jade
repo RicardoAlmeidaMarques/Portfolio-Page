@@ -14,44 +14,6 @@ block content
                 span
                   .itemTitle #{item.title}
                   p #{item.description}
-                  a(class='button', href='/portfolio/#{item.title}') See more
+                  a(class='button', href='/project/#{item.title}') See more
               div.curtain
     -}
-    - if (typeof(results3)!=='undefined'){
-      div.projectContainer
-        div.projectTitle #{results3[0].title}
-        div.projectDescription #{results3[0].long_description}
-      div.projectShowcase.scene_element.scene_element--fadeinright
-        - if (results3[0].showcase_image!==''){
-          each img in images
-            img.lazy(class='popup' href='images/portfolio/#{img}' data-original='images/portfolio/#{img}')
-        -}
-    -}
-div.footer
-  div.container
-    div.navigation
-      ul
-        li 
-          a(href='/') Home
-          div.border-bot
-        li 
-          a(href='/portfolio') Portfolio
-          div.border-bot
-        li 
-          a(href='/resume') Resume
-          div.border-bot
-        li 
-          a(href='/contact') Contact me
-          div.border-bot
-      p  &copy;2015 Ricardo Marques. All rights reserved.
-    div.social-icons
-      div.social-icons
-      a(href='http://twitter.com/ricardo2marques',target='blank',data-hint="Twitter",class="hint--top")
-        img(src='images/webicon-twitter.svg')
-      a(href='https://github.com/RicardoAlmeidaMarques',target='blank',data-hint="GitHub",class="hint--top") 
-        img(src='images/webicon-github.svg')
-      a(href='mailto:ricardoalmmarques@gmail.com',data-hint="Email",class="hint--top") 
-        img(src='images/webicon-mail.svg')
-    span 
-      div.email 
-        a(href='mailto:ricardoalmmarques@gmail.com') ricardoalmmarques@gmail.com

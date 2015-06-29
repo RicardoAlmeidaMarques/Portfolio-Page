@@ -12,6 +12,10 @@
 }
 
 
+.content p:last-child{
+	margin-bottom:50px;
+}
+
 #announcement h1:after{
 	content:'Ricardo Marques';
 }

@@ -11,9 +11,22 @@ block content
       div.alert Message not sent. Please use email link at the bottom of the page.
     -}
   -}
-  div.container.scene_element.scene_element--fadeinright
-    div.content 
-      div.title A little about me.
+  div.container.scene_element.scene_element--fadeinright 
+    div.content  
+      div.title Latest work.
+      ul 
+       each item in results2
+          li
+            img.lazy(data-original='images/portfolio/#{item.image_path}')
+            div.info
+              span 
+                .itemTitle #{item.title}
+                p #{item.description}
+                a(class='button', href='/project/#{item.title}') See more
+            div.curtain
+    div.divider
+    div.content
+      div.title.right A little about me.
       p.
         Hi! My name is Ricardo Marques and I&#39;m a software engineer with a passsion for front-end / back-end development and anything web 
         related. All of this started when I was around 2 years old and would often sit and play for as long as I was 
@@ -24,19 +37,6 @@ block content
       p.
         <br>I love building websites</b> whether they are sharp, clean and minimalist or complex and exuberant.
         Some of my hobbies are playing guitar, games (#pcmasterrace) and netflix watching sprees with the wife.
-    div.divider
-    div.content  
-      div.title.right Latest work.
-      ul 
-       each item in results2
-          li
-            img.lazy(data-original='images/portfolio/#{item.image_path}')
-            div.info
-              span 
-                .itemTitle #{item.title}
-                p #{item.description}
-                a(class='button', href='/portfolio/#{item.title}') See more
-            div.curtain
   div#contact  
    div.container.scene_element.scene_element--fadeinright
     div.contactTitle Talk to me.
