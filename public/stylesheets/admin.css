@@ -1,5 +1,14 @@
 body{
-	background:#666;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#383838+0,161616+100 */
+background: rgb(56,56,56); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(56,56,56,1) 0%, rgba(22,22,22,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(56,56,56,1)), color-stop(100%,rgba(22,22,22,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(56,56,56,1) 0%,rgba(22,22,22,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(56,56,56,1) 0%,rgba(22,22,22,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(56,56,56,1) 0%,rgba(22,22,22,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(56,56,56,1) 0%,rgba(22,22,22,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#161616',GradientType=0 ); /* IE6-9 */
+
 }
 
 .heroImg, #scrollDown{
