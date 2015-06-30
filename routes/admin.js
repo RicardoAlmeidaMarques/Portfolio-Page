@@ -11,7 +11,7 @@ router.get('/admin', function(req, res) {
     res.render('admin', {
      isAuthenticated: req.isAuthenticated(),
      user:req.user,
-     portfolio: results
+     portfolio: results,
     });
   });
 });

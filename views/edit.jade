@@ -52,8 +52,16 @@ block content
                 label#newPicture(for='uploadNewImage') Upload new pictures
               td
                 input(name='upload', type='file' , id='upload' , multiple='multiple')
+            tr
+              td
+                label(for='date') Date
+              td
+                input(name='date', type='text', id='datepicker', placeholder='yyyy/mm/dd', value='#{year}-#{month}-#{day}')
+            tr
+              td
+                label(for='url') URL
+              td
+                input(name='url', type='text', id='url', placeholder='http://', value='#{project.url}')
             tr.submit
               td(colspan='2')
                 input(type='submit' ,class='submit', value='submit')
-        
-  <script src="javascripts/edit.js"></script>
