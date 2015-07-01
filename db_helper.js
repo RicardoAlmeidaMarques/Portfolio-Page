@@ -4,10 +4,10 @@ var mysql = require('mysql');
 
 var db_config = {
   connectionLimit : 10,
-  host     : 'us-cdbr-iron-east-02.cleardb.net',
-  user     : 'b420131646c183',
-  password : '8f72cbf2',
-  database : 'heroku_ed009e298388bba'
+  host     : '',
+  user     : '',
+  password : '',
+  database : ''
  };
 
 
